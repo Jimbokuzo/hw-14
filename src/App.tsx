@@ -1,3 +1,4 @@
+import { ResetStyles } from "./features/global";
 import {
   HomeFeature,
   HeaderFeature,
@@ -8,6 +9,7 @@ import {
 function App() {
   return (
     <div>
+      <ResetStyles />
       <HeaderFeature />
       <PageFeature>
         <HomeFeature />
