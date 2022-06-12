@@ -1,5 +1,6 @@
 /** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react";
+import { Link } from "react-router-dom";
 
 interface Props {
   item: { id: number; name: string; url: string };
@@ -9,12 +10,10 @@ export const MenuNavItem = ({ item: { id, name, url } }: Props) => (
   <li
     css={css`
       display: block;
-      :first-of-type a {
-      }
     `}
     key={id}
   >
-    <a
+    <Link
       css={css`
         color: white;
         text-decoration: none;
@@ -23,9 +22,9 @@ export const MenuNavItem = ({ item: { id, name, url } }: Props) => (
         text-transform: uppercase;
         display: block;
       `}
-      href={url}
+      to={url}
     >
       {name}
-    </a>
+    </Link>
   </li>
 );
