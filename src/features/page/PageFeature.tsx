@@ -8,6 +8,7 @@ export const PageFeature = ({ children }: any) => (
       margin: auto;
       box-shadow: 3px 3px 0 0 black;
       padding: 15px;
+      margin-top: 30px;
     `}
   >
     {children}

@@ -9,7 +9,7 @@ export const MenuNavItem = ({ item: { id, name, url } }: Props) => (
   <li
     css={css`
       display: block;
-      :first-child a {
+      :first-of-type a {
       }
     `}
     key={id}
