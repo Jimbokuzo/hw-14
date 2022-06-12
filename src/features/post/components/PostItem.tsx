@@ -1,15 +1,12 @@
 /** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react";
 import { PostInterface } from "../interfaces";
-import { Link } from "react-router-dom";
 
 interface Props {
   post: PostInterface;
 }
 
-export const PostItem = ({
-  post: { id, userId, title, tags, reactions },
-}: Props) => (
+export const PostItem = ({ post: { id, body, tags, reactions } }: Props) => (
   <div
     css={css`
       max-width: 800px;
@@ -22,7 +19,7 @@ export const PostItem = ({
     <div
       css={css`
         width: 100%;
-        height: 15px;
+        height: 20px;
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -32,10 +29,15 @@ export const PostItem = ({
     >
       <h3
         css={css`
-          height: 20px;
+          width: 200px;
+          font-weight: 400;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          font-family: Arial, Helvetica, sans-serif;
         `}
       >
-        {userId}
+        {tags}
       </h3>
       <p
         css={css`
@@ -52,25 +54,9 @@ export const PostItem = ({
         {reactions}
       </p>
     </div>
-    <div>
-      <div
-        css={css`
-          width: 200px;
-          height: 20px;
-          font-size: 12px;
-          margin-bottom: 5px;
-          display: flex;
-          align-items: center;
-          justify-content: space-between;
-          font-family: Arial, Helvetica, sans-serif;
-        `}
-      >
-        <p>{tags}</p>
-      </div>
-    </div>
     <div
       css={css`
-        background: white;
+        background: #dbdbdb;
         border-radius: 10px;
         padding-left: 15px;
         width: 100%;
@@ -84,7 +70,7 @@ export const PostItem = ({
           font-family: Arial, Helvetica, sans-serif;
         `}
       >
-        <Link to={`/post/${id}`}>{title}</Link>
+        {body}
       </p>
     </div>
   </div>

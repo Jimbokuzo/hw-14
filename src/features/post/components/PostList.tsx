@@ -9,7 +9,7 @@ interface Props {
 export const PostList = ({ posts }: Props) => (
   <div>
     {posts.map((post) => (
-      <PostItem key={post.id} post={post} />
+      <PostItem post={post} />
     ))}
     <Link to="/contact">Go to contacts</Link>
   </div>

@@ -1,9 +1,10 @@
 import { Routes, Route } from "react-router-dom";
-import { HomeFeature, ContactFeature } from "../../features";
+import { HomeFeature, ContactFeature, PostFeature } from "../../features";
 
 export const AppRouter = () => (
   <Routes>
     <Route path="/" element={<HomeFeature />} />
     <Route path="/contacrs" element={<ContactFeature />} />
+    <Route path="/post/:postId" element={<PostFeature />} />
   </Routes>
 );
