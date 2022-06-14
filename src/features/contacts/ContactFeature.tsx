@@ -1,1 +1,1 @@
-export const ContactFeature = () => <h1>"Hello contacts page"</h1>;
+export const ContactFeature = () => <h1>Hello contacts page</h1>;

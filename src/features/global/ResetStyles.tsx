@@ -6,8 +6,6 @@ export const ResetStyles = () => (
       * {
         box-sizing: border-box;
       }
-      body {
-      }
       li {
         list-style: none;
       }
@@ -19,9 +17,17 @@ export const ResetStyles = () => (
       }
       a {
         text-decoration: none;
-        :hover {
-          text-decoration: underline;
-        }
+      }
+      ::-webkit-scrollbar {
+        width: 10px;
+        height: 5px;
+        background-color: white;
+      }
+      ::-webkit-scrollbar-thumb {
+        background-color: black;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background-color: #242424;
       }
     `}
   />

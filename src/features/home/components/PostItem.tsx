@@ -7,85 +7,111 @@ interface Props {
   post: PostInterface;
 }
 
-export const PostItem = ({
-  post: { id, userId, title, tags, reactions },
-}: Props) => (
-  <div
+export const PostItem = ({ post: { id, title, tags, reactions } }: Props) => (
+  <Link
     css={css`
-      max-width: 800px;
-      background: #d3bf9a;
-      border-radius: 10px;
-      padding: 10px;
-      margin-bottom: 20px;
+      font-family: Arial, Helvetica, sans-serif;
+      text-decoration: none;
+      color: black;
+      cursor: default;
     `}
+    to={`/post/${id}`}
   >
     <div
       css={css`
-        width: 100%;
-        height: 15px;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        margin-bottom: 10px;
-        cursor: pointer;
+        max-width: 800px;
+        background: #ecd8b2;
+        border-radius: 5px;
+        padding: 10px;
+        box-shadow: 0 0 10px #707070;
+        margin-bottom: 20px;
       `}
     >
-      <h3
-        css={css`
-          height: 20px;
-        `}
-      >
-        {userId}
-      </h3>
-      <p
-        css={css`
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          background: #202020;
-          width: 20px;
-          border-radius: 50%;
-          color: white;
-          font-family: Arial, Helvetica, sans-serif;
-        `}
-      >
-        {reactions}
-      </p>
-    </div>
-    <div>
       <div
         css={css`
-          width: 200px;
-          height: 20px;
-          font-size: 12px;
-          margin-bottom: 5px;
+          width: 100%;
+          height: 15px;
           display: flex;
           align-items: center;
-          justify-content: space-between;
-          font-family: Arial, Helvetica, sans-serif;
+          justify-content: flex-end;
+          margin-bottom: 10px;
         `}
       >
-        <p>{tags}</p>
+        <p
+          css={css`
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #202020;
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            color: white;
+            cursor: default;
+            font-family: Arial, Helvetica, sans-serif;
+          `}
+        >
+          {reactions}
+        </p>
+      </div>
+      <div>
+        <div
+          css={css`
+            width: 200px;
+            height: 20px;
+            font-size: 12px;
+            margin-bottom: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-family: Arial, Helvetica, sans-serif;
+          `}
+        >
+          <div
+            css={css`
+              margin-bottom: 10px;
+              background: white;
+              cursor: text;
+              border-radius: 5px;
+            `}
+          >
+            {tags.map((tag, index) => (
+              <b
+                key={index}
+                css={css`
+                  padding: 5px;
+                  margin-right: 15px;
+                  margin-bottom: 15px;
+                `}
+              >
+                {tag}
+              </b>
+            ))}
+          </div>
+        </div>
+      </div>
+      <div
+        css={css`
+          background: white;
+          border-radius: 5px;
+          padding-left: 15px;
+          width: 100%;
+          height: 30px;
+          display: flex;
+          align-items: center;
+        `}
+      >
+        <p
+          css={css`
+            cursor: text;
+            font-family: Arial, Helvetica, sans-serif;
+            text-decoration: none;
+            color: black;
+          `}
+        >
+          {title}
+        </p>
       </div>
     </div>
-    <div
-      css={css`
-        background: white;
-        border-radius: 10px;
-        padding-left: 15px;
-        width: 100%;
-        height: 30px;
-        display: flex;
-        align-items: center;
-      `}
-    >
-      <p
-        css={css`
-          font-family: Arial, Helvetica, sans-serif;
-        `}
-      >
-        <Link to={`/post/${id}`}>{title}</Link>
-      </p>
-    </div>
-  </div>
+  </Link>
 );
