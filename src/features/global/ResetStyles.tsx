@@ -19,11 +19,14 @@ export const ResetStyles = () => (
         text-decoration: none;
       }
       ::-webkit-scrollbar {
-        width: 10px;
-        height: 5px;
+        width: 7px;
         background-color: white;
       }
+      ::-webkit-scrollbar-track {
+        margin-top: 50px;
+      }
       ::-webkit-scrollbar-thumb {
+        border-radius: 5px;
         background-color: black;
       }
       ::-webkit-scrollbar-thumb:hover {

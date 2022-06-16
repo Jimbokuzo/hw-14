@@ -7,7 +7,7 @@ export const PageFeature = ({ children }: any) => (
       max-width: 800px;
       margin: auto;
       padding: 15px;
-      margin-top: 30px;
+      margin-top: 80px;
     `}
   >
     {children}
