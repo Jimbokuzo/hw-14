@@ -23,8 +23,12 @@ export const ResetStyles = () => (
       }
 
       ::-webkit-scrollbar {
-        width: 7px;
+        width: 5px;
+        background-color: black;
+      }
+      ::-webkit-scrollbar-track {
         background-color: white;
+        margin-top: 50px;
       }
       ::-webkit-scrollbar-track {
         margin-top: 50px;
