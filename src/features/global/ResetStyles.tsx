@@ -9,6 +9,9 @@ export const ResetStyles = () => (
       li {
         list-style: none;
       }
+      body {
+        background: white;
+      }
       body,
       ul,
       li {
@@ -18,6 +21,7 @@ export const ResetStyles = () => (
       a {
         text-decoration: none;
       }
+
       ::-webkit-scrollbar {
         width: 7px;
         background-color: white;
