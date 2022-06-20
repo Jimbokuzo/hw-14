@@ -5,6 +5,7 @@ export const PageFeature = ({ children }: any) => (
   <div
     css={css`
       width: 100%;
+      min-height: 797px;
     `}
   >
     <div

@@ -26,7 +26,7 @@ export const PostFeature = () => {
           border-radius: 10px;
           padding: 10px;
           margin-bottom: 20px;
-          box-shadow: 0 0 15px 0 #d6dbee;
+          box-shadow: 0 0 15px 0 #acacac;
           font-size: 24px;
           font-family: Arial, Helvetica, sans-serif;
         `}
