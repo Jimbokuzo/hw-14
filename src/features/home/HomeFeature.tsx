@@ -1,7 +1,7 @@
 /** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react";
 import { useDataPosts } from "./hooks";
-import { PostList, PostSkeleton } from "./components";
+import { PostList, PostSkeleton, AddPostPopup } from "./components";
 import { Pagination } from "./components/Pagination";
 
 export const HomeFeature = () => {
@@ -9,6 +9,16 @@ export const HomeFeature = () => {
 
   return (
     <div>
+      <div
+        css={css`
+          width: 100%;
+          display: flex;
+          justify-content: center;
+          margin-bottom: 30px;
+        `}
+      >
+        <AddPostPopup />
+      </div>
       {isLoading ? <PostSkeleton /> : <PostList posts={posts} />}
       <div
         css={css`
