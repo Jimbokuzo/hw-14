@@ -1,6 +1,7 @@
 /** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react";
 import { useDataPost } from "./hooks";
+import { UpdataPostPopup } from "./components/UpdatePostPopup";
 
 export const PostFeature = () => {
   const { body } = useDataPost();
@@ -9,6 +10,7 @@ export const PostFeature = () => {
     <div
       css={css`
         display: flex;
+        flex-direction: column;
         justify-content: center;
         align-items: center;
         width: 100%;
@@ -44,6 +46,16 @@ export const PostFeature = () => {
         >
           {body}
         </p>
+      </div>
+      <div
+        css={css`
+          width: 100%;
+          display: flex;
+          justify-content: center;
+          margin-bottom: 30px;
+        `}
+      >
+        <UpdataPostPopup />
       </div>
     </div>
   );

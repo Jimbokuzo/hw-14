@@ -1,20 +1,20 @@
 /** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react";
 import { Button, TextField } from "@mui/material";
-import { useAddPost } from "../hooks";
+import { useUpdatePost } from "../hooks/useUpdatePost";
 
 interface Props {
   handleClose: () => void;
 }
 
-export const AddPostForm = ({ handleClose }: Props) => {
-  const { onSubmitAddPost, errors } = useAddPost(handleClose);
+export const UpdatePostForm = ({ handleClose }: Props) => {
+  const { onSubmitAddPost, errors } = useUpdatePost(handleClose);
 
   return (
     <form
       onSubmit={onSubmitAddPost}
       css={css`
-        height: 200px;
+        height: 150px;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -23,16 +23,10 @@ export const AddPostForm = ({ handleClose }: Props) => {
       `}
     >
       <TextField
-        error={errors.tags}
-        name="tags"
-        label="Tags"
-        variant="standard"
-      />
-      <TextField
         error={errors.title}
         name="title"
         label="Title"
-        variant="standard"
+        variant="outlined"
       />
       <Button
         css={css`
@@ -44,7 +38,7 @@ export const AddPostForm = ({ handleClose }: Props) => {
         type="submit"
         variant="contained"
       >
-        Create
+        Update
       </Button>
     </form>
   );
